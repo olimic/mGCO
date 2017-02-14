@@ -28,7 +28,7 @@ namespace OpenCachingAPI
 
         public Task<bool> Ping()
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(); 
         }
     }
 }

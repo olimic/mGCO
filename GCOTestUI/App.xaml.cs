@@ -25,8 +25,8 @@ namespace GCOTestUI
 
         public App()
         {
-            UserAccess.AccessToken = "<insert your accesstoken here>"; 
-                        
+            UserAccess.AccessToken = "";    // insert your accesstoken here
+
             if (GeocachingService == null)
             {
                 GeocachingService = new GCLiveAPIRestService(UserAccess);
