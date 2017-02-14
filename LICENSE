@@ -2,6 +2,7 @@ Initial setup of this project was done by Oliver Michel.
 Feel free to contribute.
 
 This software implements an API of geocaching.com by Groundspeak Inc.
+The necessary API Keys are not part of this project and not public available.
 
 ---------------------
 MIT License
