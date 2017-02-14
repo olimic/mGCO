@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Groundspeak.User.Responses" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Groundspeak.User.Responses" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Groundspeak.User" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="AuthorizeLicenseResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Groundspeak.User" base="q1:StatusOnlyResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LicenseGuid" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AuthorizeLicenseResponse" nillable="true" type="tns:AuthorizeLicenseResponse" />
+  <xs:complexType name="GetHealthResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Groundspeak.User" base="q2:StatusOnlyResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CanConnectToMailerService" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CanConnectToMembershipService" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CanConnectToMemcacheServers" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CanConnectToPrimaryDatabase" type="xs:boolean" />
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConnectionStrings" nillable="true" type="q3:ArrayOfstring" />
+          <xs:element minOccurs="0" name="IsServiceFullyOperational" type="xs:boolean" />
+          <xs:element minOccurs="0" name="MailerServiceUrl" nillable="true" type="xs:string" />
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MemcacheBucketsToInvalidate" nillable="true" type="q4:ArrayOfstring" />
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MemcacheServerUrls" nillable="true" type="q5:ArrayOfstring" />
+          <xs:element minOccurs="0" name="PrimaryMemcacheBucket" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RootImageUrl" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetHealthResponse" nillable="true" type="tns:GetHealthResponse" />
+</xs:schema>

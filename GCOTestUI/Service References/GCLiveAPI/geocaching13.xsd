@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Groundspeak.Web.PocketQueries" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Groundspeak.Web.PocketQueries" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="PQSearchTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Bookmark" />
+      <xs:enumeration value="LogEntries" />
+      <xs:enumeration value="MyFinds" />
+      <xs:enumeration value="UserRoute" />
+      <xs:enumeration value="Backlog" />
+      <xs:enumeration value="Priority" />
+      <xs:enumeration value="Offline" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PQSearchTypes" nillable="true" type="tns:PQSearchTypes" />
+</xs:schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://wwww.geocaching.com/Geocaching.Live/data" elementFormDefault="qualified" targetNamespace="http://wwww.geocaching.com/Geocaching.Live/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd2" namespace="http://www.geocaching.com/Geocaching.Live/data" />
+  <xs:complexType name="GetGeocacheHealthNotificationRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://www.geocaching.com/Geocaching.Live/data" base="q1:ConsumerKeyRequestBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGeocacheHealthNotificationRequest" nillable="true" type="tns:GetGeocacheHealthNotificationRequest" />
+</xs:schema>

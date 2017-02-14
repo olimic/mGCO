@@ -1,0 +1,1475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd2" namespace="http://www.geocaching.com/Geocaching.Live/data" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd15" namespace="http://wwww.geocaching.com/Geocaching.Live/data" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd17" namespace="http://schemas.datacontract.org/2004/07/Groundspeak.User.Requests" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd18" namespace="http://schemas.datacontract.org/2004/07/Groundspeak.User" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd23" namespace="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" />
+  <xs:element name="AddFavoritePointToCache">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cacheCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddFavoritePointToCacheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="AddFavoritePointToCacheResult" nillable="true" type="q1:FavoritePointsSummaryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveFavoritePointFromCache">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cacheCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveFavoritePointFromCacheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="RemoveFavoritePointFromCacheResult" nillable="true" type="q2:FavoritePointsSummaryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersFavoritePoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersFavoritePointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetUsersFavoritePointsResult" nillable="true" type="q3:GetUserFavoritePointsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersWhoFavoritedCache">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cacheCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersWhoFavoritedCacheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetUsersWhoFavoritedCacheResult" nillable="true" type="q4:GetUsersWhoFavoritedCacheResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCacheIdsFavoritedByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCacheIdsFavoritedByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetCacheIdsFavoritedByUserResult" nillable="true" type="q5:GetCacheIdsFavoritedByUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCachesFavoritedByUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCachesFavoritedByUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetCachesFavoritedByUserResult" nillable="true" type="q6:GetCachesFavoritedByUserResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookmarkListsForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookmarkListsForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetBookmarkListsForUserResult" nillable="true" type="q7:GetBookmarkListsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookmarkListsByUserID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookmarkListsByUserIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetBookmarkListsByUserIDResult" nillable="true" type="q8:GetBookmarkListsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeocodeString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q9:GeocodeRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GeocodeStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GeocodeStringResult" nillable="true" type="q10:GetGeocodeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WindowsPhoneTileSearch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q11:WindowsPhoneTileSearchRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WindowsPhoneTileSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="WindowsPhoneTileSearchResult" nillable="true" type="q12:GetGeocacheDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterWP7DeviceTile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q13:RegisterWP7DeviceTileRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterWP7DeviceTileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="RegisterWP7DeviceTileResult" nillable="true" type="q14:StatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersCacheCounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q15:GetUsersCacheCountsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersCacheCountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetUsersCacheCountsResult" nillable="true" type="q16:GetUserCacheCountsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersTrackables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q17:GetTrackablesByUserRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersTrackablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetUsersTrackablesResult" nillable="true" type="q18:GetTrackableResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOwnedTrackables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q19:GetTrackablesByOwnerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOwnedTrackablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetOwnedTrackablesResult" nillable="true" type="q20:GetTrackableResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserGallery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q21:GetUserGalleryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserGalleryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetUserGalleryResult" nillable="true" type="q22:GetUserGalleryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserWaypoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q23:SaveUserWaypointRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUserWaypointResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="SaveUserWaypointResult" nillable="true" type="q24:SaveUserWaypointResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersGeocacheLogs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q25:GetUsersGeocacheLogsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersGeocacheLogsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetUsersGeocacheLogsResult" nillable="true" type="q26:GetGeocacheLogResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMoreGeocaches">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q27:GetMoreGeocachesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMoreGeocachesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetMoreGeocachesResult" nillable="true" type="q28:GetGeocacheDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchForGeocaches">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q29:SearchForGeocachesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchForGeocachesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="SearchForGeocachesResult" nillable="true" type="q30:GetGeocacheDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnotherUsersProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q31:GetAnotherUsersProfileRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAnotherUsersProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetAnotherUsersProfileResult" nillable="true" type="q32:GetUserProfileResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateFieldNoteAndPublish">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q33:CreateFieldNoteAndPublishRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateFieldNoteAndPublishResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="CreateFieldNoteAndPublishResult" nillable="true" type="q34:CreateFieldNoteAndPublishResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchForSouvenirsByPublicGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q35:SearchForSouvenirsByPublicGuidRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchForSouvenirsByPublicGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="SearchForSouvenirsByPublicGuidResult" nillable="true" type="q36:SouvenirResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCacheNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q37:UpdateCacheNoteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCacheNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="UpdateCacheNoteResult" nillable="true" type="q38:StatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYourUserProfile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q39:GetYourUserProfileRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetYourUserProfileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetYourUserProfileResult" nillable="true" type="q40:GetYourUserProfileResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadImageToGeocacheLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q41:UploadImageToGeocacheLogRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadImageToGeocacheLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="UploadImageToGeocacheLogResult" nillable="true" type="q42:UploadImageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTrackableLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q43:CreateTrackableLogRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateTrackableLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="CreateTrackableLogResult" nillable="true" type="q44:CreateTrackableLogResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadImageToTrackableLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q45:UploadImageToTrackableLogRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadImageToTrackableLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="UploadImageToTrackableLogResult" nillable="true" type="q46:UploadImageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookmarkListByGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q47:GetBookmarkListByGuidRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBookmarkListByGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetBookmarkListByGuidResult" nillable="true" type="q48:GetBookmarkListResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGeocachesToBookmarkList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q49:AddGeocachesToBookmarkListRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddGeocachesToBookmarkListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="AddGeocachesToBookmarkListResult" nillable="true" type="q50:StatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q51:GetGeocacheStatusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetGeocacheStatusResult" nillable="true" type="q52:GetGeocacheStatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMembershipTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMembershipTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetMembershipTypesResult" nillable="true" type="q53:GetMembershipTypesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAPILimits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAPILimitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetAPILimitsResult" nillable="true" type="q54:GetAPILimitsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteStats">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSiteStatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetSiteStatsResult" nillable="true" type="q55:GetSiteStatsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatusMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetStatusMessagesResult" nillable="true" type="q56:GetStatusMessageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImagesForGeocache">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cacheCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetImagesForGeocacheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetImagesForGeocacheResult" nillable="true" type="q57:GetImagesForGeocacheResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWptLogTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWptLogTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetWptLogTypesResult" nillable="true" type="q58:GetWptLogTypesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetGeocacheTypesResult" nillable="true" type="q59:GetGeocacheTypesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheDataTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="geocacheTypes" type="xs:boolean" />
+        <xs:element minOccurs="0" name="logTypes" type="xs:boolean" />
+        <xs:element minOccurs="0" name="attributeTypes" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheDataTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetGeocacheDataTypesResult" nillable="true" type="q60:GetGeocacheDataTypesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPocketQueryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPocketQueryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetPocketQueryListResult" nillable="true" type="q61:GetPocketQueryListResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPocketQueryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q62="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="pocketQueryGuid" type="q62:guid" />
+        <xs:element minOccurs="0" name="startItem" type="xs:int" />
+        <xs:element minOccurs="0" name="maxItems" type="xs:int" />
+        <xs:element minOccurs="0" name="gcListOnly" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPocketQueryDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetPocketQueryDataResult" nillable="true" type="q63:GetGeocacheDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFullPocketQueryData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q64="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="pocketQueryGuid" type="q64:guid" />
+        <xs:element minOccurs="0" name="startItem" type="xs:int" />
+        <xs:element minOccurs="0" name="maxItems" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFullPocketQueryDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetFullPocketQueryDataResult" nillable="true" type="q65:GetGeocacheDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPocketQueryZippedFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="pocketQueryGuid" type="q66:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPocketQueryZippedFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetPocketQueryZippedFileResult" nillable="true" type="q67:GetPocketQueryZippedFileResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrackablesByTrackingNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="trackingNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="trackableLogCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrackablesByTrackingNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetTrackablesByTrackingNumberResult" nillable="true" type="q68:GetTrackableResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrackablesByTBCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tbCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="trackableLogCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrackablesByTBCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetTrackablesByTBCodeResult" nillable="true" type="q69:GetTrackableResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrackablesInCache">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cacheCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="maxPerPage" type="xs:int" />
+        <xs:element minOccurs="0" name="trackableLogCount" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrackablesInCacheResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetTrackablesInCacheResult" nillable="true" type="q70:GetTrackableResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrackableTravelList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tbCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrackableTravelListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetTrackableTravelListResult" nillable="true" type="q71:GetTrackableTravelResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttributeTypesData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAttributeTypesDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetAttributeTypesDataResult" nillable="true" type="q72:GetAttributeTypesDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserCredentials">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="consumerKey" nillable="true" type="xs:string" />
+        <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="licenseGuid" type="q73:guid" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserCredentialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetUserCredentialsResult" nillable="true" type="q74:GetUserCredentialsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCacheNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cacheCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCacheNoteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="DeleteCacheNoteResult" nillable="true" type="q75:StatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheLogsByCacheCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cacheCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="maxPerPage" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheLogsByCacheCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetGeocacheLogsByCacheCodeResult" nillable="true" type="q76:GetGeocacheLogResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrackableLogsByTBCode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tbCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="maxPerPage" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTrackableLogsByTBCodeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetTrackableLogsByTBCodeResult" nillable="true" type="q77:GetTrackableLogsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersCacheNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startIndex" type="xs:int" />
+        <xs:element minOccurs="0" name="maxPerPage" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersCacheNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetUsersCacheNotesResult" nillable="true" type="q78:GetUsersCacheNotesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserWaypoints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cacheCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserWaypointsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetUserWaypointsResult" nillable="true" type="q79:GetUserWaypointsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserWaypoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="waypointID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteUserWaypointResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="DeleteUserWaypointResult" nillable="true" type="q80:StatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCacheByTileGuid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tileGuid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCacheByTileGuidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q81="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetCacheByTileGuidResult" nillable="true" type="q81:GetGeocacheDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ping">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PingResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAdventureHistoryItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q82:AddAdventureHistoryItemRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddAdventureHistoryItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="AddAdventureHistoryItemResult" nillable="true" type="q83:AddAdventureHistoryItemResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLabCountItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q84:DeleteLabCountItemRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteLabCountItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="DeleteLabCountItemResult" nillable="true" type="q85:DeleteLabCountItemResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeginnerCaches">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q86:GetBeginnerCachesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBeginnerCachesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetBeginnerCachesResult" nillable="true" type="q87:GetBeginnerGeocacheDataResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserFindCounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q88:GetUserFindCountsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserFindCountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetUserFindCountsResult" nillable="true" type="q89:GetUserFindCountsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q90:GetRegionsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetRegionsResult" nillable="true" type="q91:GetRegionsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q92:GetCountriesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q93="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetCountriesResult" nillable="true" type="q93:GetCountriesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocachesFromPocketQuery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q94:GetGeocachesFromPocketQueryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocachesFromPocketQueryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetGeocachesFromPocketQueryResult" nillable="true" type="q95:GetGeocachesFromPocketQueryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheContainerTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accessToken" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheContainerTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetGeocacheContainerTypesResult" nillable="true" type="q96:GetContainerTypesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserHideCounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q97:GetUserHideCountsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserHideCountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetUserHideCountsResult" nillable="true" type="q98:GetUserHideCountsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheHealth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q99:GetGeocacheHealthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheHealthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetGeocacheHealthResult" nillable="true" type="q100:GetGeocacheHealthResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLatestGeocacheHealthNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://wwww.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q101:GetGeocacheHealthNotificationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLatestGeocacheHealthNotificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q102="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetLatestGeocacheHealthNotificationResult" nillable="true" type="q102:GetLatestGeocacheHealthNotificationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveGeocacheHealthNotification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://wwww.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q103:GetGeocacheHealthNotificationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActiveGeocacheHealthNotificationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetActiveGeocacheHealthNotificationResult" nillable="true" type="q104:GetActiveGeocacheHealthNotificationResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheHealthNotificationHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://wwww.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q105:GetGeocacheHealthNotificationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGeocacheHealthNotificationHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetGeocacheHealthNotificationHistoryResult" nillable="true" type="q106:GetGeocacheHealthNotificationHistoryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNearbyCacheStats">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q107:GetNearbyCacheStatsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNearbyCacheStatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetNearbyCacheStatsResult" nillable="true" type="q108:GetNearbyCacheStatsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrecomputedNearbyCacheStats">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q109="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q109:GetPrecomputedNearbyCacheStatsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPrecomputedNearbyCacheStatsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="GetPrecomputedNearbyCacheStatsResult" nillable="true" type="q110:GetPrecomputedNearbyCacheStatsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUserAvatarImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q111:SetUserAvatarImageRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetUserAvatarImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="SetUserAvatarImageResult" nillable="true" type="q112:SetUserAvatarImageResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisableAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q113:DisableAccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisableAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="DisableAccountResult" nillable="true" type="q114:DisableAccountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthorizeAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/Groundspeak.User.Requests" minOccurs="0" name="authorizeAccountRequest" nillable="true" type="q115:AuthorizeAccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthorizeAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="AuthorizeAccountResult" nillable="true" type="q116:AuthorizeAccountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateForSocialMedia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="socialMediaAccountCreateRequestPublic" nillable="true" type="q117:SocialMediaAccountCreateRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateForSocialMediaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="CreateForSocialMediaResult" nillable="true" type="q118:CreateAccountPublicResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaLinkAccounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="socialMediaLinkAccountsRequest" nillable="true" type="q119:SocialMediaLinkAccountsRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaLinkAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="SocialMediaLinkAccountsResult" nillable="true" type="q120:SocialMediaLinkAccountsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaRevokeAccess">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="socialMediaRevokeAccessRequest" nillable="true" type="q121:SocialMediaRevokeAccessRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaRevokeAccessResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="SocialMediaRevokeAccessResult" nillable="true" type="q122:SocialMediaRevokeAccessResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaUpdateStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="socialMediaUpdateStatusRequest" nillable="true" type="q123:SocialMediaUpdateStatusRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaUpdateStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="SocialMediaUpdateStatusResult" nillable="true" type="q124:SocialMediaUpdateStatusResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaVerifyAccountLinked">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="socialMediaVerifyAccountLinkedRequest" nillable="true" type="q125:SocialMediaVerifyAccountLinkedRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaVerifyAccountLinkedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="SocialMediaVerifyAccountLinkedResult" nillable="true" type="q126:SocialMediaVerifyAccountLinkedResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaVerifyAllLinkedAccounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="socialMediaVerifyAllLinkedAccountsRequestPublic" nillable="true" type="q127:SocialMediaVerifyAllLinkedAccountsRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaVerifyAllLinkedAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="SocialMediaVerifyAllLinkedAccountsResult" nillable="true" type="q128:SocialMediaVerifyAllLinkedAccountsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserChangePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="userChangePasswordRequestPublic" nillable="true" type="q129:UserChangePasswordRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserChangePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="UserChangePasswordResult" nillable="true" type="q130:PasswordResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="loginRequestPublic" nillable="true" type="q131:LoginRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="LoginResult" nillable="true" type="q132:LoginResponsePublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/Groundspeak.User.Requests" minOccurs="0" name="request" nillable="true" type="q133:GetAccountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="GetAccountResult" nillable="true" type="q134:GetAccountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccounts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="request" nillable="true" type="q135:GetAccountsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="GetAccountsResult" nillable="true" type="q136:GetAccountsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroundspeakAccessToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="request" nillable="true" type="q137:GetAccessTokenRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGroundspeakAccessTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="GetGroundspeakAccessTokenResult" nillable="true" type="q138:AccessTokenResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaLogin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="socialMediaLoginRequestPublic" nillable="true" type="q139:SocialMediaLoginRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SocialMediaLoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q140="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="SocialMediaLoginResult" nillable="true" type="q140:SocialMediaLoginResponsePublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserNameValidAndAvailable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="isUserNameValidAndAvailableRequestPublic" nillable="true" type="q141:IsUserNameValidAndAvailableRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsUserNameValidAndAvailableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="IsUserNameValidAndAvailableResult" nillable="true" type="q142:UsernameValidAndAvailableResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateStandardAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="createStandardAccountRequestPublic" nillable="true" type="q143:CreateStandardAccountRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateStandardAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="CreateStandardAccountResult" nillable="true" type="q144:CreateAccountPublicResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecoverPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="recoverPasswordRequestPublic" nillable="true" type="q145:RecoverPasswordRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecoverPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="RecoverPasswordResult" nillable="true" type="q146:StatusOnlyResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReferAFriendShortUrl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="request" nillable="true" type="q147:GetReferAFriendShortUrlRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReferAFriendShortUrlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="GetReferAFriendShortUrlResult" nillable="true" type="q148:GetReferAFriendShortUrlResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountReferralStatistics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="request" nillable="true" type="q149:GetAccountReferralStatisticsRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAccountReferralStatisticsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="GetAccountReferralStatisticsResult" nillable="true" type="q150:GetAccountReferralStatisticsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendReferAFriendEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="referAFriendEmailRequestPublic" nillable="true" type="q151:ReferAFriendEmailRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendReferAFriendEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="SendReferAFriendEmailResult" nillable="true" type="q152:AccountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendValidationEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="request" nillable="true" type="q153:SendValidationEmailRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendValidationEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q154="http://www.geocaching.com/Geocaching.Live/data" minOccurs="0" name="SendValidationEmailResult" nillable="true" type="q154:SendValidationEmailResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecoverUsername">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="recoverUsernameRequestPublic" nillable="true" type="q155:RecoverUsernameRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecoverUsernameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="RecoverUsernameResult" nillable="true" type="q156:UserNameResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLocale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/Groundspeak.User.Requests" minOccurs="0" name="request" nillable="true" type="q157:SetLocaleRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetLocaleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="SetLocaleResult" nillable="true" type="q158:SetLocaleResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmailPreferencesForAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="request" nillable="true" type="q159:GetEmailPreferencesForAccountRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmailPreferencesForAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="GetEmailPreferencesForAccountResult" nillable="true" type="q160:EmailPreferencesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmailPreferences">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="request" nillable="true" type="q161:GetEmailPreferencesRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEmailPreferencesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="GetEmailPreferencesResult" nillable="true" type="q162:EmailPreferencesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmailPreferencesForAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="request" nillable="true" type="q163:UpdateEmailPreferencesForAccountRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateEmailPreferencesForAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="UpdateEmailPreferencesForAccountResult" nillable="true" type="q164:AccountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEmailPreferencesForAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="request" nillable="true" type="q165:RemoveEmailPreferencesForAccountRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveEmailPreferencesForAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="RemoveEmailPreferencesForAccountResult" nillable="true" type="q166:AccountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetAccountToValidated">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="request" nillable="true" type="q167:SetAccountToValidatedRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetAccountToValidatedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="SetAccountToValidatedResult" nillable="true" type="q168:SetAccountToValidatedResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetHomeCoordinates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="setHomeCoordinatesRequestPublic" nillable="true" type="q169:SetHomeCoordinatesRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetHomeCoordinatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="SetHomeCoordinatesResult" nillable="true" type="q170:AccountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsEmailAddressInUse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/Groundspeak.User.PublicRequests" minOccurs="0" name="isEmailAddressInUseRequestPublic" nillable="true" type="q171:IsEmailAddressInUseRequestPublic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsEmailAddressInUseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/Groundspeak.User" minOccurs="0" name="IsEmailAddressInUseResult" nillable="true" type="q172:IsEmailAddressInUseResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

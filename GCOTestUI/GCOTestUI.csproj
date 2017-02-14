@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6EB9EA22-EA6D-43BC-AD7E-63C018061701}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GCOTestUI</RootNamespace>
+    <AssemblyName>GCOTestUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GCLiveAPI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service\GCLiveAPISoapService.cs" />
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.AccessTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.AccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.AddAdventureHistoryItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.AuthorizeAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.CreateAccountPublicResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.CreateFieldNoteAndPublishResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.CreateTrackableLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.DeleteLabCountItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.DisableAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.EmailPreferencesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.FavoritePointsSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetAccountReferralStatisticsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetAccountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetActiveGeocacheHealthNotificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetAPILimitsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetAttributeTypesDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetBeginnerGeocacheDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetBookmarkListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetBookmarkListsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetCacheIdsFavoritedByUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetCachesFavoritedByUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetContainerTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetCountriesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetGeocacheDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetGeocacheDataTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetGeocacheHealthNotificationHistoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetGeocacheHealthResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetGeocacheLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetGeocachesFromPocketQueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetGeocacheStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetGeocacheTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetGeocodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetImagesForGeocacheResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetLatestGeocacheHealthNotificationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetMembershipTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetNearbyCacheStatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetPocketQueryListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetPocketQueryZippedFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetPrecomputedNearbyCacheStatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetReferAFriendShortUrlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetRegionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetSiteStatsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetStatusMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetTrackableLogsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetTrackableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetTrackableTravelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetUserCacheCountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetUserCredentialsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetUserFavoritePointsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetUserFindCountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetUserGalleryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetUserHideCountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetUserProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetUsersCacheNotesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetUsersWhoFavoritedCacheResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetUserWaypointsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetWptLogTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.GetYourUserProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.IsEmailAddressInUseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.LoginResponsePublic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.PasswordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SaveUserWaypointResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SendValidationEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SetAccountToValidatedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SetLocaleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SetUserAvatarImageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SocialMediaLinkAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SocialMediaLoginResponsePublic.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SocialMediaRevokeAccessResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SocialMediaUpdateStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SocialMediaVerifyAccountLinkedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SocialMediaVerifyAllLinkedAccountsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.SouvenirResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.StatusOnlyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.StatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.UploadImageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.UserNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\GCOTestUI.GCLiveAPI.UsernameValidAndAvailableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching17.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching18.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching19.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching21.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching22.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching23.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching24.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\geocaching9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GCLiveAPI\Live.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GCLiveAPI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GCLiveAPI\geocaching.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GCLiveAPI\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GCLiveAPI\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GCLiveAPI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GCO\GCO.csproj">
+      <Project>{f48cf3cc-aea9-48d7-9100-3186807827d1}</Project>
+      <Name>GCO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeocachingLiveAPI\GeocachingLiveAPI.csproj">
+      <Project>{491f3cb6-d3f7-490c-adb9-78ace2511caf}</Project>
+      <Name>GeocachingLiveAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

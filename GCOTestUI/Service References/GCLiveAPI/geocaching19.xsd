@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://www.geocaching.com/Geocaching.Live/data" elementFormDefault="qualified" targetNamespace="http://www.geocaching.com/Geocaching.Live/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Groundspeak.API.AuthorizationLib" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Utilities" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Filters" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/Souvenirs.Common.Model" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Groundspeak.Web.PocketQueries" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Geocaching.Services.Geography.WcfService.Contracts.Models" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/Groundspeak.Platform.Geography" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd15" namespace="http://wwww.geocaching.com/Geocaching.Live/data" />
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd16" namespace="http://schemas.datacontract.org/2004/07/Geocache.Health.Results.Wrappers" />
+  <xs:complexType name="FavoritePointsSummaryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element minOccurs="0" name="CacheFavoritePoints" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UsersFavoritePoints" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FavoritePointsSummaryResponse" nillable="true" type="tns:FavoritePointsSummaryResponse" />
+  <xs:complexType name="StatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StatusCode" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExceptionDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warnings" nillable="true" type="tns:ArrayOfStatusResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatusResponse" nillable="true" type="tns:StatusResponse" />
+  <xs:complexType name="ArrayOfStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatusResponse" nillable="true" type="tns:StatusResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatusResponse" nillable="true" type="tns:ArrayOfStatusResponse" />
+  <xs:complexType name="GetUserFavoritePointsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element minOccurs="0" name="FavoritePoints" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUserFavoritePointsResponse" nillable="true" type="tns:GetUserFavoritePointsResponse" />
+  <xs:complexType name="GetUsersWhoFavoritedCacheResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="UsersWhoFavoritedCache" nillable="true" type="q1:ArrayOfMember" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUsersWhoFavoritedCacheResponse" nillable="true" type="tns:GetUsersWhoFavoritedCacheResponse" />
+  <xs:complexType name="GetCacheIdsFavoritedByUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CacheCodes" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCacheIdsFavoritedByUserResponse" nillable="true" type="tns:GetCacheIdsFavoritedByUserResponse" />
+  <xs:complexType name="GetCachesFavoritedByUserResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Geocaches" nillable="true" type="q3:ArrayOfFavoritePointCacheInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCachesFavoritedByUserResponse" nillable="true" type="tns:GetCachesFavoritedByUserResponse" />
+  <xs:complexType name="GetBookmarkListsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element minOccurs="0" name="BookmarkLists" nillable="true" type="tns:ArrayOfBookmarkListEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBookmarkListsResponse" nillable="true" type="tns:GetBookmarkListsResponse" />
+  <xs:complexType name="ArrayOfBookmarkListEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BookmarkListEntry" nillable="true" type="tns:BookmarkListEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBookmarkListEntry" nillable="true" type="tns:ArrayOfBookmarkListEntry" />
+  <xs:complexType name="BookmarkListEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListID" type="xs:long" />
+      <xs:element minOccurs="0" name="ListGUID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ListName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfItems" type="xs:int" />
+      <xs:element minOccurs="0" name="ListIsShared" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ListIsPublic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ListIsArchived" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ListIsSpecial" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ListTypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookmarkListEntry" nillable="true" type="tns:BookmarkListEntry" />
+  <xs:complexType name="GeocodeRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeocodeString" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeocodeRequest" nillable="true" type="tns:GeocodeRequest" />
+  <xs:complexType name="GetGeocodeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGeocodeResponse" nillable="true" type="tns:GetGeocodeResponse" />
+  <xs:complexType name="WindowsPhoneTileSearchRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TileUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsMetric" type="xs:boolean" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="PointRadius" nillable="true" type="q4:PointRadiusFilter" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="NotFoundByUsers" nillable="true" type="q5:NotFoundByUsersFilter" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Terrain" nillable="true" type="q6:TerrainFilter" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GeocacheName" nillable="true" type="q7:GeocacheNameFilter" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Difficulty" nillable="true" type="q8:DifficultyFilter" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="CacheCode" nillable="true" type="q9:CacheCodeFilter" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GeocacheType" nillable="true" type="q10:GeocacheTypeFilter" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GeocacheContainerSize" nillable="true" type="q11:GeocacheContainerSizeFilter" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GeocacheExclusions" nillable="true" type="q12:GeocacheExclusionsFilter" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="FavoritePoints" nillable="true" type="q13:FavoritePointsFilter" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="HiddenByUsers" nillable="true" type="q14:HiddenByUsersFilter" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="NotHiddenByUsers" nillable="true" type="q15:NotHiddenByUsersFilter" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Viewport" nillable="true" type="q16:ViewportFilter" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="BookmarksExclude" nillable="true" type="q17:BookmarksExcludeFilter" />
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="CachePublishedDate" nillable="true" type="q18:CachePublishedDateFilter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WindowsPhoneTileSearchRequest" nillable="true" type="tns:WindowsPhoneTileSearchRequest" />
+  <xs:complexType name="DateRange">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DateRange" nillable="true" type="tns:DateRange" />
+  <xs:complexType name="GetGeocacheDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Geocaches" nillable="true" type="q19:ArrayOfGeocache" />
+      <xs:element minOccurs="0" name="PQCount" type="xs:long" />
+      <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CacheCodes" nillable="true" type="q20:ArrayOfstring" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Groundspeak.API.AuthorizationLib" minOccurs="0" name="CacheLimits" nillable="true" type="q21:CacheLimitCounts" />
+      <xs:element minOccurs="0" name="TotalMatchingCaches" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGeocacheDataResponse" nillable="true" type="tns:GetGeocacheDataResponse" />
+  <xs:complexType name="ArrayOfAdditionalWaypoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalWaypoint" nillable="true" type="tns:AdditionalWaypoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalWaypoint" nillable="true" type="tns:ArrayOfAdditionalWaypoint" />
+  <xs:complexType name="AdditionalWaypoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GUID" type="ser:guid" />
+      <xs:element minOccurs="0" name="GeocacheCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UTCEnteredDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UrlName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WptTypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalWaypoint" nillable="true" type="tns:AdditionalWaypoint" />
+  <xs:complexType name="RegisterWP7DeviceTileRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceFriendlyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationChannelUrl" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterWP7DeviceTileRequest" nillable="true" type="tns:RegisterWP7DeviceTileRequest" />
+  <xs:complexType name="GetUsersCacheCountsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Usernames" nillable="true" type="q22:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUsersCacheCountsRequest" nillable="true" type="tns:GetUsersCacheCountsRequest" />
+  <xs:complexType name="GetUserCacheCountsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="UserCacheCounts" nillable="true" type="q23:ArrayOfUserCounts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUserCacheCountsResponse" nillable="true" type="tns:GetUserCacheCountsResponse" />
+  <xs:complexType name="GetTrackablesByUserRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="TrackableLogsCount" type="xs:int" />
+      <xs:element minOccurs="0" name="CollectionOnly" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTrackablesByUserRequest" nillable="true" type="tns:GetTrackablesByUserRequest" />
+  <xs:complexType name="GetTrackableResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Trackables" nillable="true" type="q24:ArrayOfTrackable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTrackableResponse" nillable="true" type="tns:GetTrackableResponse" />
+  <xs:complexType name="GetTrackablesByOwnerRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="TrackableLogsCount" type="xs:int" />
+      <xs:element minOccurs="0" name="CollectionOnly" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTrackablesByOwnerRequest" nillable="true" type="tns:GetTrackablesByOwnerRequest" />
+  <xs:complexType name="GetUserGalleryRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxPerPage" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUserGalleryRequest" nillable="true" type="tns:GetUserGalleryRequest" />
+  <xs:complexType name="GetUserGalleryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GalleryImages" nillable="true" type="q25:ArrayOfImageData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUserGalleryResponse" nillable="true" type="tns:GetUserGalleryResponse" />
+  <xs:complexType name="SaveUserWaypointRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CacheCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="IsCorrectedCoordinate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AssociatedAdditionalWaypoint" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsUserCompleted" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaveUserWaypointRequest" nillable="true" type="tns:SaveUserWaypointRequest" />
+  <xs:complexType name="SaveUserWaypointResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="NewWaypoint" nillable="true" type="q26:UserWaypoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaveUserWaypointResponse" nillable="true" type="tns:SaveUserWaypointResponse" />
+  <xs:complexType name="GetUsersGeocacheLogsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Range" nillable="true" type="tns:DateRange" />
+      <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LogTypes" nillable="true" type="q27:ArrayOflong" />
+      <xs:element minOccurs="0" name="ExcludeArchived" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StartIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxPerPage" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUsersGeocacheLogsRequest" nillable="true" type="tns:GetUsersGeocacheLogsRequest" />
+  <xs:complexType name="GetGeocacheLogResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Logs" nillable="true" type="q28:ArrayOfGeocacheLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGeocacheLogResponse" nillable="true" type="tns:GetGeocacheLogResponse" />
+  <xs:complexType name="GetMoreGeocachesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLite" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StartIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="GeocacheLogCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TrackableLogCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsSummaryOnly" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetMoreGeocachesRequest" nillable="true" type="tns:GetMoreGeocachesRequest" />
+  <xs:complexType name="SearchForGeocachesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsLite" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxPerPage" type="xs:int" />
+      <xs:element minOccurs="0" name="GeocacheLogCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TrackableLogCount" nillable="true" type="xs:int" />
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="PointRadius" nillable="true" type="q29:PointRadiusFilter" />
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="NotFoundByUsers" nillable="true" type="q30:NotFoundByUsersFilter" />
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Terrain" nillable="true" type="q31:TerrainFilter" />
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GeocacheName" nillable="true" type="q32:GeocacheNameFilter" />
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Difficulty" nillable="true" type="q33:DifficultyFilter" />
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="CacheCode" nillable="true" type="q34:CacheCodeFilter" />
+      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GeocacheType" nillable="true" type="q35:GeocacheTypeFilter" />
+      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GeocacheContainerSize" nillable="true" type="q36:GeocacheContainerSizeFilter" />
+      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GeocacheExclusions" nillable="true" type="q37:GeocacheExclusionsFilter" />
+      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="FavoritePoints" nillable="true" type="q38:FavoritePointsFilter" />
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="HiddenByUsers" nillable="true" type="q39:HiddenByUsersFilter" />
+      <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="NotHiddenByUsers" nillable="true" type="q40:NotHiddenByUsersFilter" />
+      <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Viewport" nillable="true" type="q41:ViewportFilter" />
+      <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="BookmarksExclude" nillable="true" type="q42:BookmarksExcludeFilter" />
+      <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="CachePublishedDate" nillable="true" type="q43:CachePublishedDateFilter" />
+      <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="States" nillable="true" type="q44:StateFilter" />
+      <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Countries" nillable="true" type="q45:CountryFilter" />
+      <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="FoundByUser" nillable="true" type="q46:FoundByUserFilter" />
+      <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Recommended" nillable="true" type="q47:RecommendedCacheFilter" />
+      <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="EventsDateRangeUtc" nillable="true" type="q48:EventDateRangeUtcFilter" />
+      <xs:element minOccurs="0" name="SortBys" nillable="true" type="tns:ArrayOfSortOrderAndDirection" />
+      <xs:element minOccurs="0" name="IsSummaryOnly" type="xs:boolean" />
+      <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Utilities" minOccurs="0" name="SortPoint" nillable="true" type="q49:LatLngPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchForGeocachesRequest" nillable="true" type="tns:SearchForGeocachesRequest" />
+  <xs:complexType name="ArrayOfSortOrderAndDirection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SortOrderAndDirection" nillable="true" type="tns:SortOrderAndDirection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSortOrderAndDirection" nillable="true" type="tns:ArrayOfSortOrderAndDirection" />
+  <xs:complexType name="SortOrderAndDirection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AscendingOrder" type="xs:boolean" />
+      <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Filters" minOccurs="0" name="SortFilterId" type="q50:SortOrderBy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SortOrderAndDirection" nillable="true" type="tns:SortOrderAndDirection" />
+  <xs:complexType name="GetAnotherUsersProfileRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" type="xs:long" />
+      <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="ProfileOptions" nillable="true" type="q51:UserProfileOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAnotherUsersProfileRequest" nillable="true" type="tns:GetAnotherUsersProfileRequest" />
+  <xs:complexType name="GetUserProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Profile" nillable="true" type="q52:UserProfile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUserProfileResponse" nillable="true" type="tns:GetUserProfileResponse" />
+  <xs:complexType name="CreateFieldNoteAndPublishRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CacheCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WptLogTypeId" type="xs:long" />
+      <xs:element minOccurs="0" name="UTCDateLogged" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PromoteToLog" type="xs:boolean" />
+      <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="ImageData" nillable="true" type="q53:UploadImageData" />
+      <xs:element minOccurs="0" name="FavoriteThisCache" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EncryptLogText" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UpdatedLatitude" type="xs:double" />
+      <xs:element minOccurs="0" name="UpdatedLongitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Guid" nillable="true" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateFieldNoteAndPublishRequest" nillable="true" type="tns:CreateFieldNoteAndPublishRequest" />
+  <xs:complexType name="CreateFieldNoteAndPublishResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Log" nillable="true" type="q54:GeocacheLog" />
+      <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Souvenirs.Common.Model" minOccurs="0" name="Souvenirs" nillable="true" type="q55:ArrayOfSouvenir" />
+      <xs:element minOccurs="0" name="HasValidFacebookAccountLinked" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasValidTwitterAccountLinked" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateFieldNoteAndPublishResponse" nillable="true" type="tns:CreateFieldNoteAndPublishResponse" />
+  <xs:complexType name="SearchForSouvenirsByPublicGuidRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PublicGuid" type="ser:guid" />
+      <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExistingSouvenirIDs" nillable="true" type="q56:ArrayOfint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchForSouvenirsByPublicGuidRequest" nillable="true" type="tns:SearchForSouvenirsByPublicGuidRequest" />
+  <xs:complexType name="SouvenirResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Souvenirs.Common.Model" minOccurs="0" name="Souvenirs" nillable="true" type="q57:ArrayOfSouvenir" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SouvenirResponse" nillable="true" type="tns:SouvenirResponse" />
+  <xs:complexType name="UpdateCacheNoteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CacheCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UpdateCacheNoteRequest" nillable="true" type="tns:UpdateCacheNoteRequest" />
+  <xs:complexType name="GetYourUserProfileRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="ProfileOptions" nillable="true" type="q58:YourUserProfileOptions" />
+      <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="DeviceInfo" nillable="true" type="q59:DeviceData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetYourUserProfileRequest" nillable="true" type="tns:GetYourUserProfileRequest" />
+  <xs:complexType name="GetYourUserProfileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Profile" nillable="true" type="q60:YourUserProfile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetYourUserProfileResponse" nillable="true" type="tns:GetYourUserProfileResponse" />
+  <xs:complexType name="UploadImageToGeocacheLogRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LogGuid" type="ser:guid" />
+      <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="ImageData" nillable="true" type="q61:UploadImageData" />
+      <xs:element minOccurs="0" name="ReferenceCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UploadImageToGeocacheLogRequest" nillable="true" type="tns:UploadImageToGeocacheLogRequest" />
+  <xs:complexType name="UploadImageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UploadImageResponse" nillable="true" type="tns:UploadImageResponse" />
+  <xs:complexType name="CreateTrackableLogRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CacheCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TravelBugCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TrackingNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UTCDateLogged" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LogType" type="xs:long" />
+      <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="ImageData" nillable="true" type="q62:UploadImageData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateTrackableLogRequest" nillable="true" type="tns:CreateTrackableLogRequest" />
+  <xs:complexType name="CreateTrackableLogResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Log" nillable="true" type="q63:TrackableLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreateTrackableLogResponse" nillable="true" type="tns:CreateTrackableLogResponse" />
+  <xs:complexType name="UploadImageToTrackableLogRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LogGuid" type="ser:guid" />
+      <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="ImageData" nillable="true" type="q64:UploadImageData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UploadImageToTrackableLogRequest" nillable="true" type="tns:UploadImageToTrackableLogRequest" />
+  <xs:complexType name="GetBookmarkListByGuidRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BookmarkListGuid" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBookmarkListByGuidRequest" nillable="true" type="tns:GetBookmarkListByGuidRequest" />
+  <xs:complexType name="GetBookmarkListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element minOccurs="0" name="BookmarkList" nillable="true" type="tns:ArrayOfBookmarkEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBookmarkListResponse" nillable="true" type="tns:GetBookmarkListResponse" />
+  <xs:complexType name="ArrayOfBookmarkEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BookmarkEntry" nillable="true" type="tns:BookmarkEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBookmarkEntry" nillable="true" type="tns:ArrayOfBookmarkEntry" />
+  <xs:complexType name="BookmarkEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CacheCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CacheTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CacheTypeID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookmarkEntry" nillable="true" type="tns:BookmarkEntry" />
+  <xs:complexType name="AddGeocachesToBookmarkListRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BookmarkListGuid" type="ser:guid" />
+      <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CacheCodes" nillable="true" type="q65:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AddGeocachesToBookmarkListRequest" nillable="true" type="tns:AddGeocachesToBookmarkListRequest" />
+  <xs:complexType name="GetGeocacheStatusRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CacheCodes" nillable="true" type="q66:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGeocacheStatusRequest" nillable="true" type="tns:GetGeocacheStatusRequest" />
+  <xs:complexType name="GetGeocacheStatusResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GeocacheStatuses" nillable="true" type="q67:ArrayOfGeocacheStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGeocacheStatusResponse" nillable="true" type="tns:GetGeocacheStatusResponse" />
+  <xs:complexType name="GetMembershipTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Memberships" nillable="true" type="q68:ArrayOfMembershipType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetMembershipTypesResponse" nillable="true" type="tns:GetMembershipTypesResponse" />
+  <xs:complexType name="GetAPILimitsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Groundspeak.API.AuthorizationLib" minOccurs="0" name="Limits" nillable="true" type="q69:RestrictionMatrix" />
+      <xs:element minOccurs="0" name="MaxPerPage" nillable="true" type="tns:MaxPerPage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAPILimitsResponse" nillable="true" type="tns:GetAPILimitsResponse" />
+  <xs:complexType name="MaxPerPage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Geocaches" type="xs:int" />
+      <xs:element minOccurs="0" name="GeocacheLogs" type="xs:int" />
+      <xs:element minOccurs="0" name="Trackables" type="xs:int" />
+      <xs:element minOccurs="0" name="TrackableLogs" type="xs:int" />
+      <xs:element minOccurs="0" name="CacheNotes" type="xs:int" />
+      <xs:element minOccurs="0" name="GalleryImages" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaxPerPage" nillable="true" type="tns:MaxPerPage" />
+  <xs:complexType name="GetSiteStatsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Stats" nillable="true" type="q70:SiteStats" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetSiteStatsResponse" nillable="true" type="tns:GetSiteStatsResponse" />
+  <xs:complexType name="GetStatusMessageResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element minOccurs="0" name="StatusMessages" nillable="true" type="tns:ArrayOfStatusResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetStatusMessageResponse" nillable="true" type="tns:GetStatusMessageResponse" />
+  <xs:complexType name="GetImagesForGeocacheResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Images" nillable="true" type="q71:ArrayOfImageData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetImagesForGeocacheResponse" nillable="true" type="tns:GetImagesForGeocacheResponse" />
+  <xs:complexType name="GetWptLogTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="WptLogTypes" nillable="true" type="q72:ArrayOfWptLogType" />
+      <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TrackableLogTypeIdsinCache" nillable="true" type="q73:ArrayOflong" />
+      <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TrackableLogTypeIdswithPerson" nillable="true" type="q74:ArrayOflong" />
+      <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GeocacheLogTypeIds" nillable="true" type="q75:ArrayOflong" />
+      <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EventLogTypeIds" nillable="true" type="q76:ArrayOflong" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetWptLogTypesResponse" nillable="true" type="tns:GetWptLogTypesResponse" />
+  <xs:complexType name="GetGeocacheTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GeocacheTypes" nillable="true" type="q77:ArrayOfGeocacheType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGeocacheTypesResponse" nillable="true" type="tns:GetGeocacheTypesResponse" />
+  <xs:complexType name="GetGeocacheDataTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="GeocacheTypes" nillable="true" type="q78:ArrayOfGeocacheType" />
+      <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="WptLogTypes" nillable="true" type="q79:ArrayOfWptLogType" />
+      <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TrackableLogTypeIdsinCache" nillable="true" type="q80:ArrayOflong" />
+      <xs:element xmlns:q81="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TrackableLogTypeIdswithPerson" nillable="true" type="q81:ArrayOflong" />
+      <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GeocacheLogTypeIds" nillable="true" type="q82:ArrayOflong" />
+      <xs:element xmlns:q83="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EventLogTypeIds" nillable="true" type="q83:ArrayOflong" />
+      <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="AttributeTypes" nillable="true" type="q84:ArrayOfAttributeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGeocacheDataTypesResponse" nillable="true" type="tns:GetGeocacheDataTypesResponse" />
+  <xs:complexType name="GetPocketQueryListResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element minOccurs="0" name="PocketQueryList" nillable="true" type="tns:ArrayOfPQData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPocketQueryListResponse" nillable="true" type="tns:GetPocketQueryListResponse" />
+  <xs:complexType name="ArrayOfPQData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PQData" nillable="true" type="tns:PQData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPQData" nillable="true" type="tns:ArrayOfPQData" />
+  <xs:complexType name="PQData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GUID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateLastGenerated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsDownloadAvailable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FileSizeInBytes" type="xs:long" />
+      <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/Groundspeak.Web.PocketQueries" minOccurs="0" name="PQSearchType" type="q85:PQSearchTypes" />
+      <xs:element minOccurs="0" name="PQCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PQData" nillable="true" type="tns:PQData" />
+  <xs:complexType name="GetPocketQueryZippedFileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element minOccurs="0" name="ZippedFile" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPocketQueryZippedFileResponse" nillable="true" type="tns:GetPocketQueryZippedFileResponse" />
+  <xs:complexType name="GetTrackableTravelResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="TrackableTravels" nillable="true" type="q86:ArrayOfTrackableTravel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTrackableTravelResponse" nillable="true" type="tns:GetTrackableTravelResponse" />
+  <xs:complexType name="GetAttributeTypesDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="AttributeTypes" nillable="true" type="q87:ArrayOfAttributeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetAttributeTypesDataResponse" nillable="true" type="tns:GetAttributeTypesDataResponse" />
+  <xs:complexType name="GetUserCredentialsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserID" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUserCredentialsResponse" nillable="true" type="tns:GetUserCredentialsResponse" />
+  <xs:complexType name="GetTrackableLogsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="TrackableLogs" nillable="true" type="q88:ArrayOfTrackableLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetTrackableLogsResponse" nillable="true" type="tns:GetTrackableLogsResponse" />
+  <xs:complexType name="GetUsersCacheNotesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="CacheNotes" nillable="true" type="q89:ArrayOfCacheNote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUsersCacheNotesResponse" nillable="true" type="tns:GetUsersCacheNotesResponse" />
+  <xs:complexType name="GetUserWaypointsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="UserWaypoints" nillable="true" type="q90:ArrayOfUserWaypoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetUserWaypointsResponse" nillable="true" type="tns:GetUserWaypointsResponse" />
+  <xs:complexType name="AddAdventureHistoryItemRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AccessTokenRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdventureId" nillable="true" type="ser:guid" />
+          <xs:element minOccurs="0" name="DateFoundUtc" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="GeocacheId" type="ser:guid" />
+          <xs:element minOccurs="0" name="GeocacheName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GeocacheOwnerId" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddAdventureHistoryItemRequest" nillable="true" type="tns:AddAdventureHistoryItemRequest" />
+  <xs:complexType name="AccessTokenRequestBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AccessTokenRequestBase" nillable="true" type="tns:AccessTokenRequestBase" />
+  <xs:complexType name="RequestBase">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="RequestBase" nillable="true" type="tns:RequestBase" />
+  <xs:complexType name="AddAdventureHistoryItemResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AddAdventureHistoryItemResponse" nillable="true" type="tns:AddAdventureHistoryItemResponse" />
+  <xs:complexType name="ResponseBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseBase" nillable="true" type="tns:ResponseBase" />
+  <xs:complexType name="DeleteLabCountItemRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AccessTokenRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteLabCountItemRequest" nillable="true" type="tns:DeleteLabCountItemRequest" />
+  <xs:complexType name="DeleteLabCountItemResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeleteLabCountItemResponse" nillable="true" type="tns:DeleteLabCountItemResponse" />
+  <xs:complexType name="GetBeginnerCachesRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBeginnerCachesRequest" nillable="true" type="tns:GetBeginnerCachesRequest" />
+  <xs:complexType name="GetBeginnerGeocacheDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q91="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BestCaches" nillable="true" type="q91:ArrayOflong" />
+      <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Geocaches" nillable="true" type="q92:ArrayOfGeocache" />
+      <xs:element minOccurs="0" name="LockedCaches" nillable="true" type="tns:ArrayOfLockedGeocache" />
+      <xs:element minOccurs="0" name="PQCount" type="xs:long" />
+      <xs:element xmlns:q93="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CacheCodes" nillable="true" type="q93:ArrayOfstring" />
+      <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Groundspeak.API.AuthorizationLib" minOccurs="0" name="CacheLimits" nillable="true" type="q94:CacheLimitCounts" />
+      <xs:element minOccurs="0" name="SearchRadius" type="xs:long" />
+      <xs:element minOccurs="0" name="CurrentVersion" nillable="true" type="tns:VersionInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetBeginnerGeocacheDataResponse" nillable="true" type="tns:GetBeginnerGeocacheDataResponse" />
+  <xs:complexType name="ArrayOfLockedGeocache">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LockedGeocache" nillable="true" type="tns:LockedGeocache" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLockedGeocache" nillable="true" type="tns:ArrayOfLockedGeocache" />
+  <xs:complexType name="LockedGeocache">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PlacedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LockedGeocache" nillable="true" type="tns:LockedGeocache" />
+  <xs:complexType name="VersionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReleaseDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VersionInfo" nillable="true" type="tns:VersionInfo" />
+  <xs:complexType name="GetUserFindCountsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AccessTokenRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountId" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserFindCountsRequest" nillable="true" type="tns:GetUserFindCountsRequest" />
+  <xs:complexType name="GetUserFindCountsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LabsCount" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalFindCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserFindCountsResponse" nillable="true" type="tns:GetUserFindCountsResponse" />
+  <xs:complexType name="GetRegionsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConsumerKeyRequestBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRegionsRequest" nillable="true" type="tns:GetRegionsRequest" />
+  <xs:complexType name="ConsumerKeyRequestBase">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ConsumerKey" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConsumerKeyRequestBase" nillable="true" type="tns:ConsumerKeyRequestBase" />
+  <xs:complexType name="GetRegionsByIso3166Request">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetRegionsRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CountryIso3166Code" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRegionsByIso3166Request" nillable="true" type="tns:GetRegionsByIso3166Request" />
+  <xs:complexType name="GetRegionsByCountryIdRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetRegionsRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CountryId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRegionsByCountryIdRequest" nillable="true" type="tns:GetRegionsByCountryIdRequest" />
+  <xs:complexType name="GetRegionsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/Geocaching.Services.Geography.WcfService.Contracts.Models" minOccurs="0" name="Regions" nillable="true" type="q95:ArrayOfRegion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetRegionsResponse" nillable="true" type="tns:GetRegionsResponse" />
+  <xs:complexType name="GetCountriesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConsumerKeyRequestBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCountriesRequest" nillable="true" type="tns:GetCountriesRequest" />
+  <xs:complexType name="GetCountriesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/Geocaching.Services.Geography.WcfService.Contracts.Models" minOccurs="0" name="Countries" nillable="true" type="q96:ArrayOfCountry" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetCountriesResponse" nillable="true" type="tns:GetCountriesResponse" />
+  <xs:complexType name="GetGeocachesFromPocketQueryRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PocketQueryGuid" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGeocachesFromPocketQueryRequest" nillable="true" type="tns:GetGeocachesFromPocketQueryRequest" />
+  <xs:complexType name="GetGeocachesFromPocketQueryResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Geocaches" nillable="true" type="q97:ArrayOfGeocache" />
+      <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Groundspeak.Platform.Geography" minOccurs="0" name="Origin" nillable="true" type="q98:Coordinate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetGeocachesFromPocketQueryResponse" nillable="true" type="tns:GetGeocachesFromPocketQueryResponse" />
+  <xs:complexType name="GetContainerTypesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="Containers" nillable="true" type="q99:ArrayOfContainerType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetContainerTypesResponse" nillable="true" type="tns:GetContainerTypesResponse" />
+  <xs:complexType name="GetUserHideCountsRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AccessTokenRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountId" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserHideCountsRequest" nillable="true" type="tns:GetUserHideCountsRequest" />
+  <xs:complexType name="GetUserHideCountsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LabsHideCount" type="xs:int" />
+          <xs:element minOccurs="0" name="TotalHideCount" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetUserHideCountsResponse" nillable="true" type="tns:GetUserHideCountsResponse" />
+  <xs:complexType name="GetGeocacheHealthRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConsumerKeyRequestBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGeocacheHealthRequest" nillable="true" type="tns:GetGeocacheHealthRequest" />
+  <xs:complexType name="GetGeocacheHealthByGeocacheCode">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetGeocacheHealthRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GeocacheCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGeocacheHealthByGeocacheCode" nillable="true" type="tns:GetGeocacheHealthByGeocacheCode" />
+  <xs:complexType name="GetGeocacheHealthByCacheId">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:GetGeocacheHealthRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CacheId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGeocacheHealthByCacheId" nillable="true" type="tns:GetGeocacheHealthByCacheId" />
+  <xs:complexType name="GetGeocacheHealthResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Score" type="xs:double" />
+          <xs:element minOccurs="0" name="LastCalculated" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGeocacheHealthResponse" nillable="true" type="tns:GetGeocacheHealthResponse" />
+  <xs:complexType name="GetActiveGeocacheHealthNotificationByCacheId">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q100="http://wwww.geocaching.com/Geocaching.Live/data" base="q100:GetGeocacheHealthNotificationRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CacheId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetActiveGeocacheHealthNotificationByCacheId" nillable="true" type="tns:GetActiveGeocacheHealthNotificationByCacheId" />
+  <xs:complexType name="GetLatestGeocacheHealthNotificationByCacheId">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q101="http://wwww.geocaching.com/Geocaching.Live/data" base="q101:GetGeocacheHealthNotificationRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CacheId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetLatestGeocacheHealthNotificationByCacheId" nillable="true" type="tns:GetLatestGeocacheHealthNotificationByCacheId" />
+  <xs:complexType name="GetGeocacheHealthNotificationHistoryByCacheId">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q102="http://wwww.geocaching.com/Geocaching.Live/data" base="q102:GetGeocacheHealthNotificationRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CacheId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGeocacheHealthNotificationHistoryByCacheId" nillable="true" type="tns:GetGeocacheHealthNotificationHistoryByCacheId" />
+  <xs:complexType name="GetLatestGeocacheHealthNotificationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ScoreDropDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="LatestNotificationDate" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetLatestGeocacheHealthNotificationResponse" nillable="true" type="tns:GetLatestGeocacheHealthNotificationResponse" />
+  <xs:complexType name="GetActiveGeocacheHealthNotificationResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ScoreDropDate" type="xs:dateTime" />
+          <xs:element xmlns:q103="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotificationDates" nillable="true" type="q103:ArrayOfdateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetActiveGeocacheHealthNotificationResponse" nillable="true" type="tns:GetActiveGeocacheHealthNotificationResponse" />
+  <xs:complexType name="GetGeocacheHealthNotificationHistoryResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Geocache.Health.Results.Wrappers" minOccurs="0" name="NotificationHistory" nillable="true" type="q104:ArrayOfNotificationHistoryItem" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetGeocacheHealthNotificationHistoryResponse" nillable="true" type="tns:GetGeocacheHealthNotificationHistoryResponse" />
+  <xs:complexType name="GetNearbyCacheStatsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConsumerKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="0" name="DistanceToSearch" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNearbyCacheStatsRequest" nillable="true" type="tns:GetNearbyCacheStatsRequest" />
+  <xs:complexType name="GetNearbyCacheStatsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element minOccurs="0" name="TotalCaches" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalUsers" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalNearbyCaches" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetNearbyCacheStatsResponse" nillable="true" type="tns:GetNearbyCacheStatsResponse" />
+  <xs:complexType name="GetPrecomputedNearbyCacheStatsRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConsumerKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPrecomputedNearbyCacheStatsRequest" nillable="true" type="tns:GetPrecomputedNearbyCacheStatsRequest" />
+  <xs:complexType name="GetPrecomputedNearbyCacheStatsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:StatusResponse" />
+      <xs:element minOccurs="0" name="TotalCaches" type="xs:int" />
+      <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="CacheCountItem" nillable="true" type="q105:CacheCountItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPrecomputedNearbyCacheStatsResponse" nillable="true" type="tns:GetPrecomputedNearbyCacheStatsResponse" />
+  <xs:complexType name="SetUserAvatarImageRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessToken" nillable="true" type="xs:string" />
+      <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="ImageData" nillable="true" type="q106:UploadImageData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetUserAvatarImageRequest" nillable="true" type="tns:SetUserAvatarImageRequest" />
+  <xs:complexType name="SetUserAvatarImageResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AvatarUrl" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SetUserAvatarImageResponse" nillable="true" type="tns:SetUserAvatarImageResponse" />
+  <xs:complexType name="DisableAccountRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AccessTokenRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IpAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PublicGuid" nillable="true" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DisableAccountRequest" nillable="true" type="tns:DisableAccountRequest" />
+  <xs:complexType name="DisableAccountResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence>
+          <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Geocaching.Types" minOccurs="0" name="DisableAccountValidationErrors" nillable="true" type="q107:ArrayOfDisableAccountValidationError" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DisableAccountResponse" nillable="true" type="tns:DisableAccountResponse" />
+  <xs:complexType name="Status">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="StatusCode" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExceptionDetails" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Warnings" nillable="true" type="tns:ArrayOfStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="ArrayOfStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Status" nillable="true" type="tns:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatus" nillable="true" type="tns:ArrayOfStatus" />
+  <xs:complexType name="SendValidationEmailRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AccessTokenRequestBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SendValidationEmailRequest" nillable="true" type="tns:SendValidationEmailRequest" />
+  <xs:complexType name="SendValidationEmailResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SendValidationEmailResponse" nillable="true" type="tns:SendValidationEmailResponse" />
+</xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Filters" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Tucson.Geocaching.WCF.API.Filters" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="SortOrderBy">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Distance" />
+      <xs:enumeration value="FavoritePoint" />
+      <xs:enumeration value="Difficulty" />
+      <xs:enumeration value="Terrain" />
+      <xs:enumeration value="PlaceDate" />
+      <xs:enumeration value="FoundDate" />
+      <xs:enumeration value="ContainerSize" />
+      <xs:enumeration value="DateLastVisited" />
+      <xs:enumeration value="GeocacheName" />
+      <xs:enumeration value="FoundDateOfFoundByUser" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortOrderBy" nillable="true" type="tns:SortOrderBy" />
+</xs:schema>

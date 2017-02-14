@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Groundspeak.API.AuthorizationLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Groundspeak.API.AuthorizationLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="CacheLimitCounts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CachesLeft" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentCacheCount" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxCacheCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CacheLimitCounts" nillable="true" type="tns:CacheLimitCounts" />
+  <xs:complexType name="RestrictionMatrix">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CacheLimits" nillable="true" type="tns:ArrayOfCacheLimitPerMinute" />
+      <xs:element minOccurs="0" name="EnforceCacheLimits" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnforceLiteCacheLimits" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EnforceMethodLimits" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ForMembershipType" type="tns:MembershipLevel" />
+      <xs:element minOccurs="0" name="LicenseKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LiteCacheLimits" nillable="true" type="tns:ArrayOfLiteCacheLimitPerMinute" />
+      <xs:element minOccurs="0" name="MaxCallsbyIPIn1Minute" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="MethodLimits" nillable="true" type="tns:ArrayOfMethodRestriction" />
+      <xs:element minOccurs="0" name="RestrictbyIP" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ValidateIPCounts" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RestrictionMatrix" nillable="true" type="tns:RestrictionMatrix" />
+  <xs:complexType name="ArrayOfCacheLimitPerMinute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CacheLimitPerMinute" nillable="true" type="tns:CacheLimitPerMinute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCacheLimitPerMinute" nillable="true" type="tns:ArrayOfCacheLimitPerMinute" />
+  <xs:complexType name="CacheLimitPerMinute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CacheLimit" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="InMinutes" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CacheLimitPerMinute" nillable="true" type="tns:CacheLimitPerMinute" />
+  <xs:simpleType name="MembershipLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="Basic">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Premium">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">30</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Charter">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">20</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MembershipLevel" nillable="true" type="tns:MembershipLevel" />
+  <xs:complexType name="ArrayOfLiteCacheLimitPerMinute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiteCacheLimitPerMinute" nillable="true" type="tns:LiteCacheLimitPerMinute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLiteCacheLimitPerMinute" nillable="true" type="tns:ArrayOfLiteCacheLimitPerMinute" />
+  <xs:complexType name="LiteCacheLimitPerMinute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CacheLimit" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="InMinutes" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LiteCacheLimitPerMinute" nillable="true" type="tns:LiteCacheLimitPerMinute" />
+  <xs:complexType name="ArrayOfMethodRestriction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MethodRestriction" nillable="true" type="tns:MethodRestriction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMethodRestriction" nillable="true" type="tns:ArrayOfMethodRestriction" />
+  <xs:complexType name="MethodRestriction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InMinutes" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxCalls" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="MethodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PartnerMethod" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MethodRestriction" nillable="true" type="tns:MethodRestriction" />
+</xs:schema>

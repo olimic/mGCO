@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.geocaching.com/Coordinate/data" elementFormDefault="qualified" targetNamespace="http://www.geocaching.com/Coordinate/data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.groundspeak.com/LiveV6/geocaching.svc?xsd=xsd22" namespace="http://schemas.datacontract.org/2004/07/Groundspeak.Geospatial" />
+  <xs:complexType name="Coordinate">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Groundspeak.Geospatial" minOccurs="0" name="Latitude" nillable="true" type="q1:Latitude" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Groundspeak.Geospatial" minOccurs="0" name="Longitude" nillable="true" type="q2:Longitude" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Groundspeak.Geospatial" minOccurs="0" name="Altitude" nillable="true" type="q3:Altitude" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Coordinate" nillable="true" type="tns:Coordinate" />
+</xs:schema>
