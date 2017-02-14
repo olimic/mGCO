@@ -25,7 +25,7 @@ namespace GCOTestUI
 
         public App()
         {
-            UserAccess.AccessToken = ""; 
+            UserAccess.AccessToken = "<insert your accesstoken here>"; 
                         
             if (GeocachingService == null)
             {
