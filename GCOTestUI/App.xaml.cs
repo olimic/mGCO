@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using GCO.Model.Geocaching;
 using GCO.Service;
-using GCOTestUI.GCLiveAPI;
-using GCOTestUI.Service;
 using GeocachingLiveAPI;
 
 namespace GCOTestUI
@@ -28,11 +26,7 @@ namespace GCOTestUI
             UserAccess.AccessToken = "";    // insert your accesstoken here
 
             if (GeocachingService == null)
-            {
                 GeocachingService = new GCLiveAPIRestService(UserAccess);
-                //GeocachingService = new GCLiveAPISoapService(UserAccess.AccessToken, UserAccess.UniqueID);
-            }
-
         }
     }
 }
