@@ -3,6 +3,9 @@ Feel free to contribute.
 
 This software implements an API of geocaching.com by Groundspeak Inc.
 The necessary API Keys are not part of this project and not public available.
+The API Key of the Geocaching Live API by Groundspeak used with this App is intended for the Windows Phone/Mobile platform only.
+
+This software implements the OKAPI of opencaching.de and other opencaching instances (opencaching.uk/.fr/..)
 
 ---------------------
 MIT License
