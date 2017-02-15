@@ -34,7 +34,7 @@ namespace GeocachingLiveAPI
             {
                 User user = new User();
 
-                var uri = new Uri(Constants.RestUrl + "/GetYourUserProfile");
+                var uri = new Uri(GetApiUrl() + "/GetYourUserProfile");
                 string xml = string.Format(Constants.GetYourUserProfileRequest, mUserAccess.AccessToken);
                 HttpContent post = new StringContent(xml, Encoding.UTF8, "application/xml");
                 var response = await mClient.PostAsync(uri, post);
@@ -71,13 +71,19 @@ namespace GeocachingLiveAPI
         {
             try
             {
-                var uri = new Uri(Constants.RestUrl + "/Ping");
+                var uri = new Uri(GetApiUrl() + "/Ping");
                 var response = await mClient.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                     return true;
             }
             catch{ }
             return false;
+        }
+
+        private string GetApiUrl()
+        {
+            var base64EncodedBytes = System.Convert.FromBase64String(Constants.RestUrl);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes, 0, base64EncodedBytes.Length);
         }
     }
 }
