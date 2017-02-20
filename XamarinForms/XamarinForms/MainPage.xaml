@@ -4,8 +4,13 @@
              xmlns:local="clr-namespace:XamarinForms"
              x:Class="XamarinForms.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
-
+  <StackLayout>
+    <Label Text="Welcome to Xamarin Forms!"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" FontSize="24" />
+    <Label Text="One more Label... just for test... with long text"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" FontSize="24" />
+  </StackLayout>
+  
 </ContentPage>
